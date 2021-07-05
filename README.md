@@ -4,7 +4,7 @@
 
 |                      [윤민호](https://github.com/cothis)                      |               [이재윤](https://github.com/ag502)                |
 | :---------------------------------------------------------------------------: | :-------------------------------------------------------------: |
-| <img src="https://ca.slack-edge.com/T01B3TZ421W-U026V1NSN14-d46d6b599ab7-512" style="width:200px" /> | <img src="https://avatars.githubusercontent.com/u/35404137?v=4" style="width:200px"> |
+| <img src="https://ca.slack-edge.com/T01B3TZ421W-U026V1NSN14-d46d6b599ab7-512" width="250px" /> | <img src="https://avatars.githubusercontent.com/u/35404137?v=4" width="250px"/> |
 |                         많이 배우고 나누고 싶습니다.                          |              함께 성장하는 개발자가 되고 싶습니다.              |
 
 ## 🧑‍💻 VSCode TIPS
