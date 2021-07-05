@@ -4,17 +4,17 @@
 
 |                      [윤민호](https://github.com/cothis)                      |               [이재윤](https://github.com/ag502)                |
 | :---------------------------------------------------------------------------: | :-------------------------------------------------------------: |
-| ![윤민호](https://ca.slack-edge.com/T01B3TZ421W-U026V1NSN14-d46d6b599ab7-512) | ![이재윤](https://avatars.githubusercontent.com/u/35404137?v=4) |
+| <img src="https://ca.slack-edge.com/T01B3TZ421W-U026V1NSN14-d46d6b599ab7-512" style="width:200px" /> | <img src="https://avatars.githubusercontent.com/u/35404137?v=4" style="width:200px"> |
 |                         많이 배우고 나누고 싶습니다.                          |              함께 성장하는 개발자가 되고 싶습니다.              |
 
 ## 🧑‍💻 VSCode TIPS
 
 - 이재윤
-
-  1. [Bracket Pair Coloerizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer)
-  2. [Material Icon](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
-  3. [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
-  4. [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+  
+  >1. [Bracket Pair Coloerizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.>bracket-pair-colorizer)
+  >2. [Material Icon](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
+  >3. [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
+  >4. [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
 - 윤민호
 
