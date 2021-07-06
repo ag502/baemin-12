@@ -12,3 +12,10 @@ block content
                     span 로그인 해주세요
                 .login-right
                     i.fas.fa-chevron-right
+        section.main__menus__container 
+            ul.main__menus
+                - const menus = {point: '포인트', coupon: '쿠폰함', present: '선물함', cart: '찜', order: '주문내역', review: '리뷰관리'}
+                each menu, key in menus
+                    li(class=`menus__menu ${key} container-white`)
+                        img(src=`assets/${key}.png`)
+                        span=menu

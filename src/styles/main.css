@@ -23,6 +23,12 @@
     height: 155px;
 }
 
+/* login */
+
+.main__login__container {
+    margin-bottom: 2px;
+}
+
 .login {
     display: flex;
     height: 100px;
@@ -47,6 +53,29 @@
     margin-right: 10px;
 }
 
-.login-left span {
+/* menus */
+
+.main__menus {
+    display: grid;
+    height: 195px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 2px;
+    grid-row-gap: 2px;
 }
 
+.menus__menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menus__menu img {
+    width: 40px;
+    height: 35px;
+    margin-bottom: 10px;
+}
+
+.menus__menu span {
+    color: #afafaf;
+}
