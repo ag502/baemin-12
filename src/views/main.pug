@@ -4,7 +4,7 @@ block content
     main.main__container
         header.main__header.container-white My 배민
         section.main__banner
-            img(src="assets/banner.jpg")
+            img(src="assets/banner.png")
         section.main__login__container.container-white
             a.login(href="#") 
                 .login-left
@@ -25,3 +25,22 @@ block content
                 span 일회용품 덜 쓰기, 함께해요!
             .campaign-banner-left
                 i.fas.fa-chevron-right
+        section.main__bottom__nav-bar__container
+            -
+                const navs = {
+                    registerPay: {title: "배민페이 등록", isNew: true, content: "배민페이로 결제하면 최대 5.5% 배민포인트가 적립됩니다!"},
+                    accountManage: {title: "가족계정 관리", isNew: true, content: "결제수단을 공유해 우리 가족의 끼니를 챙겨주세요."},
+                    notice: {title: "공지사항", isNew: false},
+                    support: {title: "배민커넥트 지원", isNew: false}
+                }
+            for info, key in navs 
+                .nav-bar__item.container-white
+                    .nav-bar__item-left
+                        .nav-bar__item-left-top(style=info.content && {"margin-bottom" : "10px"})
+                            span=info.title
+                            if info.isNew 
+                                img(src="assets/new.png")
+                        if info.content
+                            .nav-bar__item-left-bottom=info.content
+                    .nav-bar_itme-right
+                        i.fas.fa-chevron-right
