@@ -26,7 +26,7 @@
 /* login */
 
 .main__login__container {
-    margin-bottom: 2px;
+    margin-bottom: 3px;
 }
 
 .login {
@@ -59,8 +59,8 @@
     display: grid;
     height: 195px;
     grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 2px;
-    grid-row-gap: 2px;
+    grid-column-gap: 3px;
+    grid-row-gap: 3px;
 }
 
 .menus__menu {
@@ -78,4 +78,29 @@
 
 .menus__menu span {
     color: #afafaf;
+}
+
+/* campaing banner */
+
+.main__campaign-banner__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    margin: 10px 0;
+    padding: 10px;
+    color: #afafaf;
+    font-size: 20px;
+}
+
+.campaign-banner-right {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: #68a94c;
+}
+
+.campaign-banner-right img {
+    height: 50%;
+    margin-right: 10px;
 }
