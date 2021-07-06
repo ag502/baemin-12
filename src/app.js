@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const port = 5000;
 
-const pageRouter = require('./routers');
+const pageRouter = require('./routers/main');
 
 app.set('views', `${__dirname}/views`);
 app.set('view engine', 'pug');
