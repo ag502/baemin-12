@@ -7,6 +7,7 @@ const pageRouter = require('./routers');
 app.set('views', `${__dirname}/views`);
 app.set('view engine', 'pug');
 
+app.use('/styles', express.static(`${__dirname}/styles`));
 app.use('/script', express.static(`${__dirname}/script`));
 app.use(pageRouter);
 
