@@ -1,0 +1,22 @@
+:root {
+    --container-width: 480px;
+
+    /* COLOR */
+    --primary: #28C1BC;
+    --black: #000000;
+    --grey: #DDDDDD;
+    --white: #FFFFFF;
+    --red: #ff3c3c;
+} 
+
+.container {
+    width: var(--container-width);
+    height: 100vh;
+    margin: auto;
+}
+
+.button {
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px; 
+}
