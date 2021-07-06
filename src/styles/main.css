@@ -1,4 +1,12 @@
 .main__container {
     display: flex;
     flex-direction: column;
+    text-align: center;
+}
+
+.main__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;;
+    height: 50px;
 }
