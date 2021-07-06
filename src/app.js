@@ -11,7 +11,7 @@ app.set('view engine', 'pug');
 
 app.use('/assets', express.static(path.join(__dirname, '../assets/')));
 app.use('/node_modules', express.static(path.join(__dirname, `../node_modules/@fortawesome/fontawesome-free/`)));
-app.use('/styles', express.static(`${__dirname}/styles`));
+app.use('/styles', express.static(`${__dirname}/styles`)); 
 app.use('/script', express.static(`${__dirname}/script`));
 app.use(pageRouter);
 app.use(joinAgreeRouter)
