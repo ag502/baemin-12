@@ -2,4 +2,13 @@ extends layout.pug
 
 block content 
     main.main__container
-        header.main__header My 배민
+        header.main__header.container-white My 배민
+        section.main__banner
+            img(src="assets/banner.jpg")
+        section.main__login__container.container-white
+            a.login(href="#") 
+                .login-left
+                    img(src="assets/user.png")
+                    span 로그인 해주세요
+                .login-right
+                    i.fas.fa-chevron-right
