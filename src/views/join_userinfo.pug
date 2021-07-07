@@ -1,0 +1,61 @@
+extends layout.pug
+block css 
+    link(rel="stylesheet" href="../styles/join_agree.css")
+    link(rel="stylesheet" href="../styles/join_certification.css")
+    link(rel="stylesheet" href="../styles/join_userinfo.css")
+block content 
+    .padding-container 
+        .titlebar 
+            .titlebar__item.text-left 
+                i.fas.fa-arrow-left.cursor-pointer
+            .titlebar__item.text-center 
+                span.title 회원가입
+            .titlebar__item.text-right 
+                span#next.text-grey 완료
+        form.join-form
+            .input-wrapper
+                .label 
+                    label(for="mail") 이메일 
+                .input__mail
+                    .input-field
+                        input#mail(type="mail").input
+                        .input-field__overlap
+                            button.background-transparent
+                                i.fas.fa-times-circle.text-dark-grey.cursor-pointer
+                            i.fas.fa-check.text-primary
+                    button#check-duplicate-button(type="button").button.background-transparent.border.border-grey 중복확인
+                .invalid-message 
+                    span.text-red 테스트 메시지
+            .input-wrapper
+                .label 
+                    label(for="nickname") 닉네임
+                .input-field
+                    input#nickname(type="text").input
+                    .input-field__overlap
+                        button.background-transparent
+                            i.fas.fa-times-circle.text-dark-grey.cursor-pointer
+                        i.fas.fa-check.text-primary
+                .invalid-message 
+                    span.text-red 테스트 메시지
+            .input-wrapper
+                .label 
+                    label(for="password") 비밀번호
+                .input-field
+                    input#password(type="password").input
+                    .input-field__overlap
+                        button.background-transparent
+                            i.fas.fa-times-circle.text-dark-grey.cursor-pointer
+                        i.fas.fa-check.text-primary
+                .invalid-message 
+                    span.text-red 10자 이상 영어, 대문자, 소뭇자, 숫자, 특수문자 중 2종류를 조합해야 합니다
+            .input-wrapper
+                .label 
+                    label(for="birthday") 생년월일
+                .input-field
+                    input#birthday(type="text" placeholder="예) 2000.01.01").input
+                    .input-field__overlap
+                        button.background-transparent
+                            i.fas.fa-times-circle.text-dark-grey.cursor-pointer
+                        i.fas.fa-check.text-primary
+                .invalid-message 
+                    span.text-red 테스트 메시지
