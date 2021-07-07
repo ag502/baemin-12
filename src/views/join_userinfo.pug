@@ -12,13 +12,13 @@ block content
                 span.title 회원가입
             .titlebar__item.text-right 
                 span#next.text-grey 완료
-        form.join-form
+        form.join-form(action="/join/userinfo" method="post")
             .input-wrapper
                 .label 
                     label(for="mail") 이메일 
                 .input__mail
                     .input-field
-                        input#mail(type="mail").input
+                        input#mail(type="mail" name="mail").input
                         .input-field__overlap
                             button.background-transparent
                                 i.fas.fa-times-circle.text-dark-grey.cursor-pointer
@@ -30,7 +30,7 @@ block content
                 .label 
                     label(for="nickname") 닉네임
                 .input-field
-                    input#nickname(type="text").input
+                    input#nickname(type="text" name="nickname").input
                     .input-field__overlap
                         button.background-transparent
                             i.fas.fa-times-circle.text-dark-grey.cursor-pointer
@@ -41,7 +41,7 @@ block content
                 .label 
                     label(for="password") 비밀번호
                 .input-field
-                    input#password(type="password").input
+                    input#password(type="password" name="password").input
                     .input-field__overlap
                         button.background-transparent
                             i.fas.fa-times-circle.text-dark-grey.cursor-pointer
@@ -52,10 +52,11 @@ block content
                 .label 
                     label(for="birthday") 생년월일
                 .input-field
-                    input#birthday(type="text" placeholder="예) 2000.01.01").input
+                    input#birthday(type="text" placeholder="예) 2000.01.01" name="birthday").input
                     .input-field__overlap
                         button.background-transparent
                             i.fas.fa-times-circle.text-dark-grey.cursor-pointer
                         i.fas.fa-check.text-primary
                 .invalid-message 
                     span.text-red 테스트 메시지
+            button(type="submit") 회원가입

@@ -1,21 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const validator = () => {
-        
-    }
-    
-    const valids = new Map();
-    
-    const addValidate(regExp, match, message, $target, $message) {
-        if (!valids.get($target)) {
-            valids.set($target, []);
-        }
+  const validator = () => {};
 
-        valids.get($target).push({ regExp, match, message, $message })
+  const valids = new Map();
+
+  const addValidate = (regExp, match, message, $target, $message) => {
+    if (!valids.get($target)) {
+      valids.set($target, []);
     }
 
-    
-    
-    const $phone = document.querySelector('#phone');
-    
+    valids.get($target).push({ regExp, match, message, $message });
+  };
 
+  const $phone = document.querySelector('#phone');
 });
