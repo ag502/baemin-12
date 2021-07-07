@@ -6,11 +6,11 @@ block content
     .padding-container 
         .titlebar
             .titlebar__item.text-left 
-                i.fas.fa-arrow-left
+                i.fas.fa-arrow-left.cursor-pointer
             .titlebar__item.text-center 
                 span.title 회원가입
             .titlebar__item.text-right 
-                span 다음
+                span#next.text-grey 다음
         form.join-form
             .input-wrapper
                 .label 
@@ -18,17 +18,18 @@ block content
                 .input-field
                     input#phone(type="phone").input
                     .input-field__overlap
-                        button.erase X
-                        i.fas.fa-check
+                        button.background-transparent
+                            i.fas.fa-times-circle.text-dark-grey.cursor-pointer
+                        i.fas.fa-check.text-primary
                 .invalid-message 
-                    span 테스트 메시지
-            .input-wrapper.d-none
+                    span.text-red 테스트 메시지
+            .input-wrapper
                 .label
                     label(for="certification") 인증번호
                 .input-field 
-                    input#certiication(type="text").input
+                    input#certification(type="text").input
                     .input-field__overlap
-                        span.red 04:55
-                .flex.justify-end
-                    button(type="button").button.text-primary 인증번호 다시받기
-            button(type="button").button 인증번호 받기
+                        span.text-red.text-small 04:55
+                .d-flex.justify-end
+                    button(type="button").cursor-pointer.background-transparent.text-primary 인증번호 다시받기
+            button#request-number(type="button").button.cursor-pointer 인증번호 받기
