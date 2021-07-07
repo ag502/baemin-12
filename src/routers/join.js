@@ -1,4 +1,6 @@
 const express = require('express');
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 const joinRouter = express.Router();
 const db = require('../db');
 
@@ -40,11 +42,12 @@ joinRouter.get('/join/userinfo', async (req, res) => {
 joinRouter.post('/join/userinfo', async (req, res) => {
   try {
     const { mail, nickname, password, birthday } = req.body;
-    console.log(mail, nickname, password, birthday);
-    await db.get('users').push({ mail, nickname, password, birthday }).write();
+    bcrypt.hash(password, saltRounds, async (err, hash) => {
+      await db.get('users').push({ mail, nickname, password: hash, birthday }).write();
+    });
     res.redirect('/');
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 });
 
