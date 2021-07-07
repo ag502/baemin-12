@@ -3,7 +3,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 
-const pageRouter = require('./routers/main');
+const mainRouter = require('./routers/main');
 const joinRouter = require('./routers/join');
 const loginRouter = require('./routers/login');
 
