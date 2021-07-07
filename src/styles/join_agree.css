@@ -1,6 +1,9 @@
 .titlebar {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    font-size: 30px;
+    height: 60px;
 }
 
 .titlebar__item {
@@ -14,7 +17,7 @@
 }
 
 .message {
-    font-size: 1.2rem;
+    font-size: 24px;
 }
 
 .agree {
@@ -22,12 +25,13 @@
     flex-direction: column;
     justify-content: space-between;
     user-select: none;
+    font-size: 24px;
 }
 
 .agree__form {
     display: flex;
     justify-content: space-between;
-    margin: 16px 0;
+    margin: 24px 0;
 }
 
 .agree__form label {
@@ -36,10 +40,10 @@
 }
 
 .input-form > input {
-    width: 18px;
-    height: 18px;
+    width: 24px;
+    height: 24px;
     padding: 0;
-    margin: 0 4px 0 0;
+    margin: 0 10px 0 0;
 }
 
 .agree__items {
@@ -57,7 +61,7 @@
 }
 
 .item .agree__form {
-    margin: 8px 0;
+    margin: 16px 0;
 }
 
 .agree__footer {
@@ -71,9 +75,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 4px 0;
+    margin: 8px 0;
     padding-left: 16px;
-    height: 60px;
+    height: 80px;
 }
 
 .input-form {
@@ -101,11 +105,12 @@
 }
 
 #next-button {
-    width: 100%;
     height: 60px;
     background-color: var(--grey);
     color: var(--white);
     font-size: 1.1rem;
+    justify-self: flex-end;
+    margin-top: auto;
 }
 
 #next-button.active {

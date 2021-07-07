@@ -17,6 +17,25 @@
     margin: auto;
 }
 
+.padding-container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px 20px 10px;
+    height: 100%;
+}
+
+.input {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #EBEBEB;
+    font-size: 25px;
+    padding-bottom: 10px;
+}
+
+.input::placeholder {
+    color: #D4D4D4;
+}
+
 .button {
     outline: none;
     border-radius: 5px; 
