@@ -10,8 +10,8 @@ block content
                 img(src="assets/img/cancel.png")
         section.login__container 
             form.login(action="/login" method="post")
-                input.input.id-input(type="text" placeholder="아이디 또는 이메일")
-                input.input.pw-input(type="password" placeholder="비밀번호")
+                input.input.id-input(type="text" placeholder="아이디 또는 이메일" name="id")
+                input.input.pw-input(type="password" placeholder="비밀번호" name="password")
                 button.button.login-btn 로그인
             .find-info__container
                 button.find-info-id 아이디 찾기                
