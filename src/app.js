@@ -3,8 +3,8 @@ const path = require('path');
 const app = express();
 const port = 5000;
 
-const mainRouter = require('./routers/main');
-const joinAgreeRouter = require('./routers/join_agree');
+const pageRouter = require('./routers/main');
+const joinRouter = require('./routers/join');
 const loginRouter = require('./routers/login');
 
 app.set('views', `${__dirname}/views`);
@@ -15,8 +15,8 @@ app.use('/node_modules', express.static(path.join(__dirname, `../node_modules/@f
 app.use('/styles', express.static(`${__dirname}/styles`));
 app.use('/script', express.static(`${__dirname}/script`));
 
-app.use(mainRouter);
-app.use(joinAgreeRouter);
+app.use(pageRouter);
+app.use(joinRouter);
 app.use(loginRouter);
 
 app.listen(port, () => {
