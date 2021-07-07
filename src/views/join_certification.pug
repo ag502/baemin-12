@@ -2,11 +2,14 @@ extends layout.pug
 block css 
     link(rel="stylesheet" href="../styles/join_agree.css")
     link(rel="stylesheet" href="../styles/join_certification.css")
+block script 
+    script(src="../script/join_certification.js") 
 block content 
     .padding-container 
         .titlebar
             .titlebar__item.text-left 
-                i.fas.fa-arrow-left.cursor-pointer
+                a(href="/join/agree") 
+                    i.fas.fa-arrow-left.cursor-pointer
             .titlebar__item.text-center 
                 span.title 회원가입
             .titlebar__item.text-right 
