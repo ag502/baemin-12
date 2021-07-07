@@ -1,0 +1,34 @@
+extends layout.pug 
+block css 
+    link(rel="stylesheet" href="../styles/join_agree.css")
+    link(rel="stylesheet" href="../styles/join_certification.css")
+block content 
+    .padding-container 
+        .titlebar
+            .titlebar__item.text-left 
+                i.fas.fa-arrow-left
+            .titlebar__item.text-center 
+                span.title 회원가입
+            .titlebar__item.text-right 
+                span 다음
+        form.join-form
+            .input-wrapper
+                .label 
+                    label(for="phone") 휴대전화 
+                .input-field
+                    input#phone(type="phone").input
+                    .input-field__overlap
+                        button.erase X
+                        i.fas.fa-check
+                .invalid-message 
+                    span 테스트 메시지
+            .input-wrapper.d-none
+                .label
+                    label(for="certification") 인증번호
+                .input-field 
+                    input#certiication(type="text").input
+                    .input-field__overlap
+                        span.red 04:55
+                .flex.justify-end
+                    button(type="button").button.text-primary 인증번호 다시받기
+            button(type="button").button 인증번호 받기
