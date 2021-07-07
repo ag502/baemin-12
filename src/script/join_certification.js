@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const validator = () => {
+        
+    }
+    
     const valids = new Map();
     
     const addValidate(regExp, match, message, $target, $message) {
@@ -8,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         valids.get($target).push({ regExp, match, message, $message })
     }
+
+    
     
     const $phone = document.querySelector('#phone');
     
