@@ -9,8 +9,9 @@ joinRouter.get('/join/agree', async (req, res) => {
   }
 });
 
-joinRouter.get('/join/certification', async (req, res) => {
+joinRouter.post('/join/certification', async (req, res) => {
   try {
+    console.info(req.body);
     res.render('join_certification', { title: '휴대번호 인증' });
   } catch (error) {
     console.error(error);

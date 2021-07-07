@@ -42,24 +42,24 @@ block content
                 .item
                     .agree__form 
                         label.input-form
-                            input(type="checkbox" name="agree").optional
+                            input(type="checkbox" name="optional" value="personal").optional
                             span 개인정보 제3자 제공 동의 (선택)
                     i.fas.fa-chevron-right
                 .item
                     .agree__form 
                         label.input-form
-                            input(type="checkbox" name="agree").optional 
+                            input(type="checkbox" name="optional" value="marketing").optional 
                             span 마케팅 정보 메일, SMS 수신동의 (선택)
             .agree__footer
                 .button.age-check
                     label.input-form
-                        input(type="radio" name="age-range" id="adult" checked)
+                        input(type="radio" name="age-range" value="adult" checked)
                         span.bold 만 14세 이상입니다.
                     .image-wrapper 
                         img(src="/assets/img/adult.png", alt="아이콘")
                 .button.age-check
                     div.input-form
-                        input(type="radio" name="age-range" id="child")
+                        input(type="radio" name="age-range" value="child")
                         label(for="child").child-check
                             span.bold 만 14세 미만입니다.
                             span.description 본인확인이 된 보호자의 배민계정이 필요해요.
