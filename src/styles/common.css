@@ -5,6 +5,8 @@
     --primary: #28C1BC;
     --black: #000000;
     --grey: #DDDDDD;
+    --light-grey: #F0F0F0;
+    --dark-grey: #A0A0A0;
     --white: #FFFFFF;
     --red: #ff3c3c;
 } 
@@ -17,6 +19,22 @@
 
 .button {
     outline: none;
-    cursor: pointer;
     border-radius: 5px; 
 }
+
+.bold {
+    font-weight: bold;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
