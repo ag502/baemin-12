@@ -3,9 +3,9 @@ const loginRouter = express.Router();
 
 loginRouter.get('/login', async (req, res) => {
   try {
-    if (req.session.id) {
-      console.log(req.session.id);
-      req.session.destroy();
+    const { userId } = req.session;
+    if (userId) {
+      res.redirect('/');
     }
     res.render('login', { title: '로그인' });
   } catch (error) {
@@ -13,13 +13,16 @@ loginRouter.get('/login', async (req, res) => {
   }
 });
 
-const dummyAcount = { id: 'ag502', password: '123' };
+const user1 = { id: 'ag502', password: '123' };
+const user2 = { id: 'test', password: '111' };
 
 loginRouter.post('/login', async (req, res) => {
   const { id, password } = req.body;
-  if (id === dummyAcount.id && password === dummyAcount.password) {
-    req.session.id = id;
-    req.session.save(() => {
+  console.log(id, password);
+  if (id === user2.id && password === user2.password) {
+    req.session.userId = id;
+    // res.redirect('/');
+    req.session.save(function () {
       res.redirect('/');
     });
   } else {
