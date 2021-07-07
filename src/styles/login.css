@@ -11,11 +11,86 @@
 /* 로그인 */
 
 .login__container {
-    margin-top: 20%;
-    margin-bottom: 40%;
+    margin-top: 30%;
+    margin-bottom: 55%;
 }
 
 .login {
     display: flex;
     flex-direction: column;
+}
+
+.login input {
+    margin-bottom: 40px;
+}
+
+.login-btn {
+    background-color: var(--primary);
+    color: var(--white);
+    cursor: pointer;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.find-info__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.find-info__container button {
+    background-color: inherit;
+    width: 50%;
+    color: var(--grey);
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.find-info-id {
+    text-align: right;
+    padding-right: 15px;
+    border-right: 2px solid var(--grey);
+}
+
+.find-info-pw {
+    padding-left: 15px;
+    text-align: left;
+}
+
+/* social login */
+
+.social-login__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    margin-bottom: 15px;
+    background-color: inherit;
+    border: 1px solid #939393;
+    cursor: pointer;
+}
+
+.social-btn img {
+    width: 12px;
+    height:15px;
+    margin-right: 10px;
+}
+
+/* 회원가입 */
+
+.sign-up__container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
+}
+
+.sign-up__container a {
+    text-decoration: none;
+    color: var(--primary);
 }
