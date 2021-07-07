@@ -1,0 +1,33 @@
+extends layout.pug
+
+block css
+    link(rel="stylesheet" href="../styles/login.css")
+
+block content
+    .padding-container
+        .cancel__btn 
+            button
+                img(src="assets/img/cancel.png")
+        section.login__container 
+            form.login(action="/login" method="post")
+                div
+                    input.input.id-input(type="text" placeholder="아이디 또는 이메일" name="id")
+                    .error-msg.id-require 아이디를 입력해 주세요
+                    .error-msg.id-undefined 존재하지 않는 계정 입니다
+                div
+                    input.input.pw-input(type="password" placeholder="비밀번호" name="password")
+                    .error-msg.pw-require 비밀번호를 입력해 주세요
+                button.button.login-btn 로그인
+            .find-info__container
+                button.find-info-id 아이디 찾기                
+                button.find-info-pw 비밀번호 찾기
+        section.social-login__container
+            - const platforms = {facebook: "페이스북으로 로그인", naver: "네이버로 로그인", apple: "Apple로 로그인"}
+            for content, platform in platforms
+                button.button.social-btn
+                    img(src=`assets/img/${platform}.png`)
+                    span=content
+        sectin.sign-up__container
+            span 혹시, 배달의 민족이 처음이신가요? &nbsp;
+            a(href="#") 회원가입
+    script(src="../script/login.js")

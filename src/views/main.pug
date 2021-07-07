@@ -1,0 +1,47 @@
+extends layout.pug
+block css 
+    link(rel="stylesheet" href="../styles/main.css")
+block content 
+    main.main__container
+        header.main__header.container-white My 배민
+        section.main__banner
+            img(src="assets/img/banner.png")
+        section.main__login__container.container-white
+            a.login(href="/login") 
+                .login-left
+                    img(src="assets/img/user.png")
+                    span 로그인 해주세요
+                .login-right
+                    i.fas.fa-chevron-right
+        section.main__menus__container 
+            ul.main__menus
+                - const menus = {point: '포인트', coupon: '쿠폰함', present: '선물함', cart: '찜', order: '주문내역', review: '리뷰관리'}
+                each menu, key in menus
+                    li(class=`menus__menu ${key} container-white`)
+                        img(src=`assets/img/${key}.png`)
+                        span=menu
+        section.main__campaign-banner__container.container-white
+            .campaign-banner-right
+                img(src="assets/img/root.png")
+                span 일회용품 덜 쓰기, 함께해요!
+            .campaign-banner-left
+                i.fas.fa-chevron-right
+        section.main__bottom__nav-bar__container
+            -
+                const navs = {
+                    registerPay: {title: "배민페이 등록", isNew: true, content: "배민페이로 결제하면 최대 5.5% 배민포인트가 적립됩니다!"},
+                    accountManage: {title: "가족계정 관리", isNew: true, content: "결제수단을 공유해 우리 가족의 끼니를 챙겨주세요."},
+                    notice: {title: "공지사항", isNew: false},
+                    support: {title: "배민커넥트 지원", isNew: false}
+                }
+            for info, key in navs 
+                .nav-bar__item.container-white
+                    .nav-bar__item-left
+                        .nav-bar__item-left-top(style=info.content && {"margin-bottom" : "10px"})
+                            span=info.title
+                            if info.isNew 
+                                img(src="assets/img/new.png")
+                        if info.content
+                            .nav-bar__item-left-bottom=info.content
+                    .nav-bar_itme-right
+                        i.fas.fa-chevron-right
