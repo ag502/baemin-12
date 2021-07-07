@@ -8,7 +8,7 @@
     --light-grey: #F0F0F0;
     --dark-grey: #A0A0A0;
     --white: #FFFFFF;
-    --red: #ff3c3c;
+    --red: #f54848;
 } 
 
 .container {
@@ -30,10 +30,17 @@
     border-bottom: 1px solid #ebebeb;
     font-size: 25px;
     padding-bottom: 10px;
+    width: 100%;
 }
 
 .input::placeholder {
     color: #d4d4d4;
+}
+
+.error-msg {
+    display: none;
+    margin-top: 10px;
+    color: var(--red);
 }
 
 .button {
