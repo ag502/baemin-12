@@ -20,7 +20,7 @@
     flex-direction: column;
 }
 
-.login input {
+.login > div {
     margin-bottom: 40px;
 }
 

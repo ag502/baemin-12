@@ -18,15 +18,13 @@ const user2 = { id: 'test', password: '111' };
 
 loginRouter.post('/login', async (req, res) => {
   const { id, password } = req.body;
-  console.log(id, password);
-  if (id === user2.id && password === user2.password) {
+  if (id === user1.id && password === user1.password) {
     req.session.userId = id;
-    // res.redirect('/');
     req.session.save(function () {
-      res.redirect('/');
+      // res.redirect('/');
     });
   } else {
-    res.send();
+    res.status(401).send({ message: 'Unauthorized User' });
   }
 });
 
