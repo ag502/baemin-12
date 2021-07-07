@@ -3,7 +3,7 @@ block css
     link(rel="stylesheet" href="../styles/join_agree.css")
     link(rel="stylesheet" href="../styles/join_certification.css")
 block script 
-    script(src="../script/join_certification.js") 
+    script(src="../script/join_certification.js" type="module") 
 block content 
     .padding-container 
         .titlebar
@@ -24,8 +24,7 @@ block content
                         button.background-transparent
                             i.fas.fa-times-circle.text-dark-grey.cursor-pointer
                         i.fas.fa-check.text-primary
-                .invalid-message 
-                    span.text-red 테스트 메시지
+                .error-msg.invalid-message 테스트 메시지
             .input-wrapper
                 .label
                     label(for="certification") 인증번호
