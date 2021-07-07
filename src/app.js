@@ -3,8 +3,8 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 
-const mainRouter = require('./routers/main');
-const joinAgreeRouter = require('./routers/join_agree');
+const pageRouter = require('./routers/main');
+const joinRouter = require('./routers/join');
 const loginRouter = require('./routers/login');
 
 const app = express();
@@ -32,7 +32,7 @@ app.use(
 );
 
 app.use(mainRouter);
-app.use(joinAgreeRouter);
+app.use(joinRouter);
 app.use(loginRouter);
 
 app.listen(port, () => {
