@@ -5,3 +5,10 @@ block css
 
 block content
     .padding-container
+        .cancel__btn 
+            button
+                img(src="assets/img/cancel.png")
+        .login__container 
+            form.login(action="/login" method="post")
+                input.input.id-input(type="text" placeholder="아이디 또는 이메일")
+                input.input.pw-input(type="password" placeholder="비밀번호")

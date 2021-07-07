@@ -22,6 +22,18 @@
     height: 100%;
 }
 
+.input {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #ebebeb;
+    font-size: 25px;
+    padding-bottom: 10px;
+}
+
+.input::placeholder {
+    color: #d4d4d4;
+}
+
 .button {
     outline: none;
     border-radius: 5px; 
