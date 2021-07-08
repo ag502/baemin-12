@@ -55,6 +55,7 @@ $submitBtn.addEventListener('click', (e) => {
       toggleRequireErrorMsg(false);
       toggleUndefinedErrorMsg(true);
     }
+    window.location.replace('/');
   });
 });
 
