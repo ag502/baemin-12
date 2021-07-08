@@ -1,6 +1,6 @@
 /* 취소 버튼 */
 
-.cancel__btn button {
+.cancel__btn a {
     background-color: inherit;
 }
 
