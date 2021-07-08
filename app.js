@@ -6,7 +6,7 @@ const joinRouter = require('./src/routers/join');
 const loginRouter = require('./src/routers/login');
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 const session = require('express-session');
 // const LowdbStore = require('lowdb-session-store')(session);
@@ -32,7 +32,6 @@ app.use(
     cookie: {
       expires: 1000 * 60 * 60 * 60,
     },
-    // store: new LowdbStore(db.get('sessions'), { ttl: 86400 }),
   })
 );
 
