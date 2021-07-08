@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const $validCheck = document.querySelector('.fa-check');
 
   const { addValidate, checkValid } = validator();
-  addValidate(/\d{3}-\d{4}-\d{4}/, true, '올바르지 않은 형식입니다.', $phone, $message);
+  addValidate(/\d{3}-\d{4}-\d{4}$/, true, '올바르지 않은 형식입니다.', $phone, $message);
 
   const validHandler = () => {
     $message.style.display = '';
@@ -21,26 +21,30 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   function phoneNumber(value) {
-    value = value.replace(/[^0-9]/g, '');
-    return value.replace(/(^02.{0}|^01.{1}|[0-9]{3})([0-9]+)([0-9]{4})/, '$1-$2-$3');
+    return value
+      .replace(/[^0-9]/g, '')
+      .replace(/(^02|^0505|^1[0-9]{3}|^0[0-9]{2})([0-9]+)?([0-9]{4})$/, '$1-$2-$3')
+      .replace('--', '-');
   }
 
   const debouncedValidator = debouncer(checkValid, 250);
-  document.querySelector('.join-form').addEventListener('input', async (e) => {
-    const $phoneInput = e.target.closest('#phone');
-    if ($phoneInput) {
-      const { value } = $phoneInput;
-      if (value.length !== 0) {
-        $resetBtn.style.display = 'inline';
-      }
-      $phoneInput.value = phoneNumber(value);
+  document.querySelector('.join-form').addEventListener('input', (e) => {
+    const { value } = $phone;
+    if (value.length !== 0) {
+      $resetBtn.style.display = 'inline';
     }
-    await debouncedValidator(e, validHandler, invalidHandler);
+    if (value.length === 0) {
+      $resetBtn.style.display = 'none';
+      $validCheck.style.display = 'none';
+    }
+    $phone.value = phoneNumber(value);
+
+    debouncedValidator(e, validHandler, invalidHandler);
   });
 
   $resetBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    $phoneNumInput.value = '';
+    $phone.value = '';
     $resetBtn.style.display = 'none';
     $validCheck.style.display = 'none';
   });
