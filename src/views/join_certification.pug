@@ -3,7 +3,8 @@ block css
     link(rel="stylesheet" href="../styles/join_agree.css")
     link(rel="stylesheet" href="../styles/join_certification.css")
 block script 
-    script(src="../script/join_certification.js") 
+    script(src="../script/join_certification/join_certification.js" type="module")
+    script(src="../script/join_certification/timer.js" type="module") 
 block content 
     .padding-container 
         .titlebar
@@ -13,7 +14,7 @@ block content
             .titlebar__item.text-center 
                 span.title 회원가입
             .titlebar__item.text-right 
-                span#next.text-grey 다음
+                a#next.text-grey 다음
         form.join-form
             .input-wrapper
                 .label 
@@ -21,18 +22,17 @@ block content
                 .input-field
                     input#phone(type="phone").input
                     .input-field__overlap
-                        button.background-transparent
+                        button(style={"display": "none"} type="button")#reset-btn.background-transparent
                             i.fas.fa-times-circle.text-dark-grey.cursor-pointer
-                        i.fas.fa-check.text-primary
-                .invalid-message 
-                    span.text-red 테스트 메시지
+                        i.fas.fa-check.text-primary(style={"display": "none"})
+                .error-msg.invalid-message 테스트 메시지
             .input-wrapper
                 .label
                     label(for="certification") 인증번호
                 .input-field 
-                    input#certification(type="text").input
+                    input#certification(type="text" disabled="disabled").input
                     .input-field__overlap
-                        span.text-red.text-small 04:55
+                        span#timer.text-red.text-small
                 .d-flex.justify-end
-                    button(type="button").cursor-pointer.background-transparent.text-primary 인증번호 다시받기
+                    button(type="button")#re-request.cursor-pointer.background-transparent.text-primary 인증번호 다시받기
             button#request-number(type="button").button.cursor-pointer 인증번호 받기

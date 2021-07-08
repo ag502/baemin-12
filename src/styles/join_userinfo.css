@@ -1,22 +1,42 @@
 .join-form {
-    padding: 0;
+  padding: 0;
 }
 
 .input__mail {
-    --gap: 16px;
-    --button-size: 90px;
-    align-items: center;
-    display: flex;
-    gap: 16px;
-    justify-content: space-between;
+  --gap: 16px;
+  --button-size: 90px;
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
 }
 
 .input__mail > .input-field {
-    flex-basis: calc(100% - var(--button-size) - var(--gap));
+  flex-basis: calc(100% - var(--button-size) - var(--gap));
+}
+
+#next {
+  color: var(--black);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#next[disabled] {
+  color: var(--dark-grey);
+  cursor: default;
 }
 
 #check-duplicate-button {
-    display: block;
-    flex-basis: var(--button-size);
-    height: 80%;
+  display: block;
+  flex-basis: var(--button-size);
+  height: 80%;
+  color: var(--dark-grey);
+}
+
+.remove-button {
+  display: none;
+}
+
+.valid-status {
+  color: var(--dark-grey);
 }

@@ -6,7 +6,7 @@ block css
 block content
     .padding-container
         .cancel__btn 
-            button
+            a(href="/")
                 img(src="assets/img/cancel.png")
         section.login__container 
             form.login(action="/login" method="post")
@@ -29,5 +29,5 @@ block content
                     span=content
         sectin.sign-up__container
             span 혹시, 배달의 민족이 처음이신가요? &nbsp;
-            a(href="#") 회원가입
+            a(href="/join/agree") 회원가입
     script(src="../script/login.js")
