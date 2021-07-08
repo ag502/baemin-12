@@ -44,8 +44,19 @@ joinRouter.post('/join/userinfo', async (req, res) => {
     const { mail, nickname, password, birthday } = req.body;
     bcrypt.hash(password, saltRounds, async (err, hash) => {
       await db.get('users').push({ mail, nickname, password: hash, birthday }).write();
+      console.log(mail, nickname, hash);
+      res.redirect('/');
     });
-    res.redirect('/');
+  } catch (error) {
+    console.error(error);
+  }
+});
+
+joinRouter.get('/join/hasDuplicate', async (req, res) => {
+  try {
+    const mail = req.query.mail;
+    const findUser = db.get('users').find({mail}).value();
+    res.send(findUser !== undefined);
   } catch (error) {
     console.error(error);
   }

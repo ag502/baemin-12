@@ -9,7 +9,7 @@ const app = express();
 const port = 5000;
 
 const session = require('express-session');
-const LowdbStore = require('lowdb-session-store')(session);
+// const LowdbStore = require('lowdb-session-store')(session);
 const db = require('./src/db');
 
 app.set('views', `${__dirname}/src/views`);
@@ -22,7 +22,7 @@ app.use('/assets', express.static(`${__dirname}/assets`));
 app.use(express.static('src'));
 app.use('/node_modules', express.static(path.join(__dirname, `./node_modules/@fortawesome/fontawesome-free/`)));
 
-const lowdbStore = new LowdbStore(db.get('sessions'), { ttl: 86400 });
+// const lowdbStore = new LowdbStore(db.get('sessions'), { ttl: 86400 });
 
 app.use(
   session({
