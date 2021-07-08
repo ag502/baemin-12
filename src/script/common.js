@@ -1,11 +1,15 @@
 const debouncer = (callback, delay) => {
   let timer = undefined;
   return (...params) => {
-    if (timer) {
-      clearTimeout(timer);
-      timer = undefined;
-    }
-    timer = setTimeout(callback, delay, ...params);
+    return new Promise((resolve, reject) => {
+      if (timer) {
+        clearTimeout(timer);
+        timer = undefined;
+      }
+      timer = setTimeout(() => {
+        resolve(callback(...params));
+      }, delay);
+    });
   };
 };
 const validator = () => {
@@ -22,26 +26,35 @@ const validator = () => {
       validHandler();
       return;
     }
-    const { $message, valids } = map.get($input);
+
+    const { valids } = map.get($input);
     if (valids) {
-      const value = $input.value;
-      if (value.length === 0) {
-        // $message.style.display = '';
-        validHandler();
-        return;
+      if ($input.value.length === 0) {
+        return null;
       }
-      const invalid = valids.find((valid) => {
-        if (typeof valid.regExp === 'function') {
-          return valid.regExp() !== valid.match;
-        }
-        const regExp = new RegExp(valid.regExp);
-        return regExp.test(value) !== valid.match;
-      });
+      const invalid = getInvalid(valids, $input.value);
+
       invalid ? invalidHandler(invalid.message) : validHandler();
     } else {
       validHandler();
     }
   };
-  return { addValidate, checkValid };
+
+  const getInvalid = (valids, value) => {
+    return valids.find(valid => {
+      if (typeof valid.regExp === 'function') {
+        return valid.regExp() !== valid.match;
+      }
+      const regExp = new RegExp(valid.regExp);
+      return regExp.test(value) !== valid.match;
+    });
+  }
+
+  const checkAll = () => {
+    const results = [];
+    map.forEach((mapValue, key) => results.push(getInvalid(mapValue.valids, key.value)));
+    return results.every(result => !result);
+  }
+  return { addValidate, checkValid, checkAll };
 };
 export { debouncer, validator };
