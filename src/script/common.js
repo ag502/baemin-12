@@ -26,12 +26,14 @@ const validator = () => {
       validHandler();
       return;
     }
+
     const { valids } = map.get($input);
     if (valids) {
       if ($input.value.length === 0) {
         return null;
       }
       const invalid = getInvalid(valids, $input.value);
+
       invalid ? invalidHandler(invalid.message) : validHandler();
     } else {
       validHandler();
