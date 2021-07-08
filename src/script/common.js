@@ -24,6 +24,8 @@ const validator = () => {
   
   const checkValid = ({target}) => {
     const $input = target.closest('.input-field > input')
+    if (!map.has($input)) return;
+
     const { $message, valids} = map.get($input);
     if (valids) {
       const value = $input.value;
@@ -35,9 +37,9 @@ const validator = () => {
 
       if (invalid) {
         $message.textContent = invalid.message;
-        $message.style = 'display: block';
+        $message.style.display = 'block';
       } else {
-        $message.style = '';
+        $message.style.display = '';
       }
     }
   }
@@ -45,4 +47,4 @@ const validator = () => {
   return { addValidate, checkValid };
 };
 
-export {debouncer, validator};
+export { debouncer, validator };
