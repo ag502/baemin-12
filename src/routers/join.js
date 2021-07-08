@@ -12,6 +12,14 @@ joinRouter.get('/join/agree', async (req, res) => {
   }
 });
 
+joinRouter.get('/join/certification', async (req, res) => {
+  try {
+    res.render('join_certification', { title: '휴대번호 인증' });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 joinRouter.post('/join/certification', async (req, res) => {
   try {
     const { optional } = req.body;
@@ -55,7 +63,7 @@ joinRouter.post('/join/userinfo', async (req, res) => {
 joinRouter.get('/join/hasDuplicate', async (req, res) => {
   try {
     const mail = req.query.mail;
-    const findUser = db.get('users').find({mail}).value();
+    const findUser = db.get('users').find({ mail }).value();
     res.send(findUser !== undefined);
   } catch (error) {
     console.error(error);

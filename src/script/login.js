@@ -54,6 +54,7 @@ $submitBtn.addEventListener('click', (e) => {
     if (res.status === 401) {
       toggleRequireErrorMsg(false);
       toggleUndefinedErrorMsg(true);
+      return;
     }
     window.location.replace('/');
   });
