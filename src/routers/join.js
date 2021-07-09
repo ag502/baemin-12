@@ -16,7 +16,7 @@ joinRouter.get('/join/certification', async (req, res) => {
   try {
     res.render('join_certification', { title: '휴대번호 인증' });
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 });
 
