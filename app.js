@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use('/assets', express.static(`${__dirname}/assets`));
 app.use(express.static('src'));
-app.use('/node_modules', express.static(path.join(__dirname, `./node_modules/@fortawesome/fontawesome-free/`)));
+app.use('/node_modules', express.static(`${__dirname}/node_modules/@fortawesome/fontawesome-free/`));
 
 app.use(
   session({
