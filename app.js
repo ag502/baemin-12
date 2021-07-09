@@ -1,5 +1,8 @@
 const express = require('express');
 const session = require('express-session');
+const LowdbStore = require('lowdb-session-store')(session);
+const lowdb = require('lowdb');
+const FileSync = require('lowdb/adapters/FileSync');
 const path = require('path');
 
 const mainRouter = require('./src/routers/main');
@@ -9,7 +12,8 @@ const loginRouter = require('./src/routers/login');
 const app = express();
 const port = process.env.PORT || 5000;
 
-const db = require('./src/db');
+const adapter = new FileSync('session.json', { defaultValue: { session: [] }});
+const db = lowdb(adapter);
 
 app.set('views', `${__dirname}/src/views`);
 app.set('view engine', 'pug');
@@ -24,10 +28,11 @@ app.use(
   session({
     secret: '#KFg$g!$KT9U}BY',
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
     cookie: {
       expires: 1000 * 60 * 60 * 60,
     },
+    store: new LowdbStore(db.get('session'))
   })
 );
 

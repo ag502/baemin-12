@@ -41,8 +41,15 @@ loginRouter.post('/login', async (req, res) => {
 
 loginRouter.get('/logout', async (req, res) => {
   try {
-    req.session.destroy();
-    res.redirect('/');
+    await req.session.destroy(function(err) {
+      if(err) {
+          return next(err);
+      } else {
+          req.session = null;
+          console.log("logout successful");
+          return res.redirect('/');
+      }
+    });
   } catch (error) {
     console.error(error);
   }
