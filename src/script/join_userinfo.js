@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const checkMonthAndDay = ($birthday) => {
     const [_, month, day] = $birthday.value.split('.').map(Number);
     // 2월 31일 같은 문제가 발생할 수 있음.
-    return month >= 1 && month <= 12 && (day >= 1 || day <= 31);
+    return (month >= 1 && month <= 12) && (day >= 1 && day <= 31);
   };
   const $birthday = document.querySelector('#birthday');
   addValidate(/^\d{4}[.]\d{2}[.]\d{2}$/, true, '2021.07.05 형식으로 입력해주세요', $birthday);
