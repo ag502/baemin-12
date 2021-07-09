@@ -139,5 +139,6 @@ dist
 .ionide
 
 db.json
+session.json
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,node

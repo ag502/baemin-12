@@ -5,7 +5,7 @@ mainRouter.get('/', async (req, res) => {
   try {
     res.render('main', { title: '메인', session: req.session?.userId });
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 });
 
