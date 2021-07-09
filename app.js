@@ -7,7 +7,7 @@ const joinRouter = require('./src/routers/join');
 const loginRouter = require('./src/routers/login');
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 const db = require('./src/db');
 
