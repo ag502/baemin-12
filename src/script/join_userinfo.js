@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (isDuplicated) {
         $checkDuplicateButton.style.color = 'var(--black)';
       } else {
-        console.log($checkDuplicateButton);
         $checkDuplicateButton.style.color = 'var(--dark-grey)';
       }
       return isDuplicated;

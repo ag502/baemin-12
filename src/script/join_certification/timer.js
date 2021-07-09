@@ -50,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   $reqNumberBtn.addEventListener('click', (e) => {
     if ($phoneNumInput.value.length === 13) {
-      console.log('request');
       $reqNumberBtn.disabled = true;
 
       if (validSetTimer || validTimer) {
@@ -67,7 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   $reReqNumberBtn.addEventListener('click', (e) => {
     if ($phoneNumInput.value.length === 13) {
-      console.log('rerequest');
       $reReqNumberBtn.disabled = true;
       buttonToggle($reReqNumberBtn, false);
 
